@@ -1,4 +1,4 @@
-# gpSP+ Core Manager for R36S (ArkOS / dArkOS)
+# gpSP Plus Core Manager for R36S (ArkOS / dArkOS)
 
 Bring **real Game Boy Advance Link Cable emulation** to your retro handheld! 
 
@@ -40,17 +40,27 @@ Please keep this in mind when navigating the script menu:
 
 ## 🛠️ Installation Guide
 
-We made the installation process as easy as possible. Just follow these steps:
+We made the installation process as easy as possible! Just follow these steps:
 
-1. **Download** the latest release `.zip` file from this repository.
-2. **Extract** the `.zip` file on your computer. You should see two main items:
-   - The shell script file
-   - A folder containing the core files
-3. **Copy to SD Card:** Insert your console's SD card (the one with your games) into your PC. Open the `roms` partition.
-4. **Move to Tools:** Find the `tools` folder inside the `roms` partition and paste **both** the script and the `gpsp_plus` folder inside it. 
-   - *Path example: `SD_CARD/roms/tools/`*
-5. **Boot your R36S:** Safely eject the SD card, put it back into your console, and turn it on.
-6. **Run the Installer:** Scroll through your console's main systems until you find the **Tools** section (Options menu). Find the gpSP+ script you just added and open it.
+1. 📥 **Download** the latest release `.zip` file from this repository.
+2. 📦 **Extract** the `.zip` file on your computer. 
+3. 💾 **Copy to SD Card:** Insert your console's SD card (the one with your games, usually named `EASYROMS` or `roms`) into your PC.
+4. 🧩 **Move to Tools:** Find the `tools` folder inside the `roms` partition and paste **both** the extracted script and the `gpsp_plus` folder inside it.
+
+**👀 Here is how your folder structure should look like:**
+
+```text
+🗂️ SD_CARD (roms)
+ └── 📁 tools
+      ├── 📁 gpsp_plus
+      │    ├── ⚙️ gpsp_plus_libretro.so
+      │    └── ⚙️ gpsp_plus_libretro.info
+      ├── 📜 install_gpsp_plus.sh
+      └── // (other tools you might already have...)
+```
+
+5. 🕹️ **Boot your R36S:** Safely eject the SD card from your PC, put it back into your console, and turn it on.
+6. 🚀 **Run the Installer:** Scroll through your console's main systems until you find the **Tools** section (Options menu). Find the gpSP+ script you just added, open it, and let the magic happen!
 
 ## 🚀 Usage
 
@@ -66,4 +76,4 @@ If you ever want to revert back to the default emulator, simply run the script a
 ## 🙏 Credits & Acknowledgements
 
 A special thanks to the **RParadise Team / Koriki Project** for providing the compiled `gpSP+` core used in this package.
-* **Core Source:** https://rparadise-team.github.io/Koriki/armhf/gpsp_plus_libretro.so.zip
+* **Core Source:** [gpsp_plus_libretro.so.zip](https://rparadise-team.github.io/Koriki/armhf/gpsp_plus_libretro.so.zip)
