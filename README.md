@@ -22,7 +22,7 @@ This script was specifically developed and tested for the **R36S** handheld cons
 
 It should work out of the box on any **ArkOS** build or its community variants, including:
 - ArkOS
-- dArkOSr
+- dArkOS
 - dArkOSen
 - dArkOSre
 - dArkOS4clone
