@@ -77,3 +77,8 @@ If you ever want to revert back to the default emulator, simply run the script a
 
 A special thanks to the **RParadise Team / Koriki Project** for providing the compiled `gpSP+` core used in this package.
 * **Core Source:** [gpsp_plus_libretro.so.zip](https://rparadise-team.github.io/Koriki/armhf/gpsp_plus_libretro.so.zip)
+## 📥 Download
+
+Click the button below to download the official installation package (version 1.0):
+
+[![Download install_gpsp_plus.zip](https://img.shields.io/badge/📥_Download_Now-install__gpsp__plus.zip-2ea44f?style=for-the-badge&logo=github)](https://github.com/victor-s-cibas/gpsp_plus_r36s/releases/download/1.0/install_gpsp_plus.zip)
