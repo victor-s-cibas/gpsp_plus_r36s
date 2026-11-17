@@ -2,7 +2,7 @@
 # ==============================================================================
 #  gpSP+ Core Manager (RetroArch 32-bit) - ArkOS / dArkOS (640x480 Default)
 #  Installs/uninstalls gpSP+ for retroarch32 and updates es_systems.cfg (GBA)
-#  Author: Victor Cibas | Refactored for Stability
+#  Author: Victor Cibas | Refactored for Stability | v1.1 Fix
 # ==============================================================================
 
 # Abort on undeclared variables (helps catch typos before they cause logic errors)
@@ -41,7 +41,7 @@ if [ -f /usr/share/plymouth/themes/text.plymouth ]; then
     DETECTED_OS=$(grep -i '^title=' /usr/share/plymouth/themes/text.plymouth 2>/dev/null | cut -d'=' -f2 | awk '{print $1}')
     [ -n "$DETECTED_OS" ] && OS_NAME="$DETECTED_OS"
 fi
-BACKTITLE=" $OS_NAME // gpSP+ (RetroArch 32-bit) | by Victor Cibas "
+BACKTITLE=" $OS_NAME // gpSP+ manager v1.1 (RetroArch 32-bit) | by Victor Cibas"
 
 # Detect active TTY safely (Prevents "not a tty" crash in dialog)
 CURR_TTY="$(tty 2>/dev/null)"
@@ -298,7 +298,6 @@ edit_es_systems() {
     # Python handler with stderr capturing for crash prevention
     sudo python3 - "$ES_CFG" "$ACTION" << 'PYEOF'
 import os, re, sys, tempfile
-import xml.etree.ElementTree as ET
 
 cfg_path = sys.argv[1]
 action = sys.argv[2]
@@ -366,10 +365,7 @@ try:
     new_content = sys_pattern.sub(process_system, content)
 
     if modified:
-        # Validate XML integrity before overwriting config file
-        xml_body = re.sub(r'^\s*<\?xml[^>]*\?>', '', new_content)
-        ET.fromstring(f"<_root_check>{xml_body}</_root_check>")
-
+        # Removed ET.fromstring validation to prevent crashes on non-compliant es_systems.cfg (ArkOS)
         dir_name = os.path.dirname(cfg_path)
         fd, tmp_path = tempfile.mkstemp(dir=dir_name, prefix=".es_systems_")
         try:
